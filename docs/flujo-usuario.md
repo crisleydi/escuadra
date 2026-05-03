@@ -1,8 +1,8 @@
-# Flujo de uso del usuario
+# Flujo de usuario
 
 ## 1. Perfil del usuario
 
-El sistema Escuadra está dirigido a estudiantes, docentes y usuarios que necesitan utilizar herramientas matemáticas para resolver problemas de forma rápida y visual.
+Escuadra está dirigido a estudiantes, docentes y usuarios que necesitan utilizar herramientas matemáticas para resolver problemas de forma rápida y visual.
 
 El usuario busca:
 - Resolver operaciones matemáticas
