@@ -1,29 +1,32 @@
-# Flujo de Usuario - Suite Escuadra
+# Flujo de usuario
 
-Este documento describe la experiencia de uso de la suite Escuadra, detallando cómo los profesionales interactúan con el sistema para resolver problemas de ingeniería.
+## 1. Perfil del usuario
 
-## 1. Perfil del Usuario Objetivo
-El usuario principal de Escuadra es el **Ingeniero de Sistemas** que requiere realizar cálculos técnicos de alta precisión, automatizar procesos matemáticos y gestionar datos de proyectos de infraestructura de forma organizada y eficiente.
+Escuadra está dirigido a estudiantes, docentes y usuarios que necesitan utilizar herramientas matemáticas para resolver problemas de forma rápida y visual.
 
----
-
-## 2. Flujo de Uso A: Resolución de Cálculo Estructural
-Este flujo describe el proceso desde la entrada de datos hasta la obtención de resultados técnicos.
-
-1. **Autenticación:** El ingeniero accede al sistema con sus credenciales de usuario.
-2. **Selección de Módulo:** Selecciona el módulo de "Cálculo de Ingeniería" en el panel principal.
-3. **Ingreso de Parámetros:** El usuario introduce las variables del problema (ej. dimensiones, cargas, coeficientes de seguridad).
-4. **Ejecución:** El ingeniero presiona el botón de "Calcular" para activar los algoritmos de la suite.
-5. **Revisión de Resultados:** El sistema despliega los resultados en pantalla con su respectiva unidad de medida.
-6. **Exportación:** El usuario descarga el reporte técnico en formato PDF para su archivo de proyecto.
+El usuario busca:
+- Resolver operaciones matemáticas
+- Visualizar resultados de forma clara
+- Ahorrar tiempo en cálculos manuales
 
 ---
 
-## 3. Flujo de Uso B: Gestión de Diccionario de Datos del Proyecto
-Este flujo detalla cómo el ingeniero organiza la información técnica del sistema.
+## 2. Flujo de uso principal
 
-1. **Acceso a Documentación:** El ingeniero ingresa a la sección de "Gestión de Datos".
-2. **Consulta de Diccionario:** El usuario busca el término técnico o la tabla de base de datos que desea consultar.
-3. **Modificación de Atributos:** En caso de ser necesario, el ingeniero actualiza las restricciones de integridad (PK/FK) de un elemento.
-4. **Validación:** El sistema verifica que los cambios no rompan la arquitectura establecida.
-5. **Cierre de Sesión:** Una vez guardados los cambios, el usuario sale del módulo de forma segura.
+### Escenario: Resolver una operación matemática
+
+1. El usuario abre la aplicación Escuadra.
+2. El sistema muestra la interfaz principal con las herramientas disponibles.
+3. El usuario selecciona una herramienta (por ejemplo: sistema de ecuaciones).
+4. El sistema muestra los campos de entrada necesarios.
+5. El usuario ingresa los datos requeridos.
+6. El usuario hace clic en el botón de "Calcular" o "Resolver".
+7. El sistema procesa la información.
+8. El sistema muestra el resultado en pantalla.
+9. El usuario revisa el resultado obtenido.
+
+---
+
+## 3. Resultado esperado
+
+El usuario obtiene el resultado de la operación de forma rápida, clara y sin errores, facilitando su aprendizaje o trabajo.
