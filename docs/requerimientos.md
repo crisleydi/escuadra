@@ -1,23 +1,28 @@
-# Requerimientos del Proyecto
-
-## Requerimientos Funcionales
+# Requerimientos Funcionales (RF)
 
 | ID | Descripción | Prioridad | Estado |
-|---|---|---|---|
-| RF-001 | | Alta | Pendiente |
+|----|-------------|-----------|--------|
+| RF-001 | El sistema debe de calcular el momento de flector de la viga  | Alta | Pendiente |
+| RF-002 | El sistema debe calcular la fuerza cortante en una viga  | Alta | Pendiente |
+| RF-003 | El sistema debe convertir unidades de longitud al SI | Alta | Pendiente |
+| RF-004 | El sistema debe convertir unidades de fuerza al SI | Alta | Pendiente |
+| RF-005 | El sistema debe convertir unidades de presion al SI  | Alta | Pendiente |
+| RF-006 | El sistema debe calcular la media de un conjunto de datos  | Alta | Pendiente |
+| RF-007 | El sistema debe calcular la desviacion estandar de un conjunto de datos | Alta | Pendiente |
+| RF-008 | El sistema debe calcular las proporciones de una mezcla de concreto | Alta | Pendiente |
 
-## Requerimientos No Funcionales
-
-| ID | Descripción | Categoría | Estado |
-|---|---|---|---|
-| RNF-001 | El sistema debe ser compatible con Windows 10, Linux (Ubuntu 20.04+) y macOS 11+. | Compatibilidad | Pendiente |
-| RNF-002 | El sistema debe ejecutarse en Python 3.10 o superior. | Software | Pendiente |
-| RNF-003 | El sistema puede utilizar dependencias externas mediante pip, definidas en requirements.txt. | Software | Pendiente |
-| RNF-004 | El tiempo de respuesta del sistema no debe superar los 2 segundos en condiciones normales. | Rendimiento | Pendiente |
-| RNF-005 | La interfaz debe ser intuitiva y fácil de usar para nuevos usuarios. | Usabilidad | Pendiente |
-
-## Requerimientos de Sistema
+# Requerimientos No Funcionales (RNF)
 
 | ID | Descripción |
-|---|---|
-| RS-001 | |
+|----|-------------|
+| RNF-001 | Ejecución desde CLI |
+| RNF-002 | Compatible con Python 3.8+ |
+| RNF-003 | Respuesta menor a 1 segundo |
+
+# Requerimientos de Software (RS)
+
+| Componente | Versión |
+|------------|---------|
+| Python | 3.8+ |
+| Node.js | No aplica |
+| SO | Windows, Linux, macOS |
