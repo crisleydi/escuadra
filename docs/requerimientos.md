@@ -2,14 +2,14 @@
 
 | ID | Descripción | Prioridad | Estado |
 |----|-------------|-----------|--------|
-| RF-001 | El sistema debe de calcular el momento de flector de la viga  | Alta | Pendiente |
-| RF-002 | El sistema debe calcular la fuerza cortante en una viga  | Alta | Pendiente |
-| RF-003 | El sistema debe convertir unidades de longitud al SI | Alta | Pendiente |
-| RF-004 | El sistema debe convertir unidades de fuerza al SI | Alta | Pendiente |
-| RF-005 | El sistema debe convertir unidades de presion al SI  | Alta | Pendiente |
-| RF-006 | El sistema debe calcular la media de un conjunto de datos  | Alta | Pendiente |
-| RF-007 | El sistema debe calcular la desviacion estandar de un conjunto de datos | Alta | Pendiente |
-| RF-008 | El sistema debe calcular las proporciones de una mezcla de concreto | Alta | Pendiente |
+| RF-001 | Calcular área de un círculo | Alta | Pendiente |
+| RF-002 | Calcular área de un rectángulo | Alta | Pendiente |
+| RF-003 | Convertir Celsius a Fahrenheit | Alta | Pendiente |
+| RF-004 | Convertir Celsius a Kelvin | Media | Pendiente |
+| RF-005 | Calcular resistencia eléctrica (Ley de Ohm) | Alta | Pendiente |
+| RF-006 | Calcular potencia eléctrica | Media | Pendiente |
+| RF-007 | Calcular perímetro de un círculo | Baja | Pendiente |
+| RF-008 | Calcular volumen de un cilindro | Baja | Pendiente |
 
 # Requerimientos No Funcionales (RNF)
 
