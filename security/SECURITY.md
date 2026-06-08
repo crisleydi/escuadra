@@ -19,3 +19,9 @@ en cada PR mediante GitHub Actions.
 | Versión | Soportada |
 |---|---|
 | latest | ✅ |
+
+## Documentación completa
+
+La política de seguridad completa se encuentra en:
+
+- [docs/seguridad.md](../docs/seguridad.md)
