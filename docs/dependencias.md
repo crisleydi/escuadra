@@ -1,34 +1,36 @@
 # Dependencias del Proyecto
 
-## Dependencias de Producción
+Este documento describe las dependencias utilizadas por el proyecto, su propósito y los criterios para incorporar nuevas librerías.
 
-Estas dependencias son gestionadas en el archivo `requirements.txt`
+Estas dependencias son gestionadas en el archivo `requirements.txt`.
+
 | Dependencia | Versión | Propósito | ¿Crítica? | ¿Puede eliminarse? | Documentación |
 | :--- | :--- | :--- | :---: | :---: | :--- |
-| **FastAPI** | 0.115.0 | Framework principal para la construcción y diseño de las APIs REST del proyecto. | Sí | No | [FastAPI Docs](https://fastapi.tiangolo.com) |
-| **Uvicorn** | 0.30.0 | Servidor ASGI de alta velocidad para ejecutar y desplegar la aplicación FastAPI. | Sí | No | [Uvicorn Docs](https://www.uvicorn.org) |
-| **Requests** | 2.32.3 | Biblioteca para realizar solicitudes HTTP y consumo de servicios o APIs externas. | No | No, requerida para integraciones externas. | [Requests Docs](https://requests.readthedocs.io) |
+| PySide6 | >=6.6 | Framework basado en Qt para el desarrollo de la interfaz gráfica de usuario del proyecto. | Sí | No | https://doc.qt.io/qtforpython/ |
+| pyyaml | No especificada | Permite leer y escribir archivos YAML utilizados para la configuración del proyecto. | Sí | No | https://pyyaml.org/wiki/PyYAMLDocumentation |
 
 ---
 
-## Dependencias de Desarrollo
 
 Estas dependencias son gestionadas en el archivo `requirements-dev.txt`.
 
 | Dependencia | Versión | Propósito | ¿Crítica? | ¿Puede eliminarse? | Documentación |
 | :--- | :--- | :--- | :---: | :---: | :--- |
-| **Pytest** | 8.3.0 | Framework para la creación, organización y ejecución de pruebas unitarias e de integración. | Sí | No | [Pytest Docs](https://docs.pytest.org) |
-| **Black** | 24.4.0 | Formateador de código determinista para asegurar la consistencia del estilo PEP 8 en el proyecto. | No | Sí, pero afectaría la estandarización del código. | [Black Docs](https://black.readthedocs.io) |
+| pytest | >=8.0 | Framework para la creación y ejecución de pruebas automatizadas. | Sí | No | https://docs.pytest.org/ |
+| ruff | >=0.4 | Herramienta para análisis estático y formateo de código. | No | Sí, pero afectaría la calidad y consistencia del código. | https://docs.astral.sh/ruff/ |
+| pre-commit | >=3.7 | Ejecuta verificaciones automáticas antes de cada commit. | No | Sí, pero reduciría los controles de calidad del desarrollo. | https://pre-commit.com/ |
+| build | >=1.2 | Permite generar paquetes distribuibles del proyecto. | No | Sí, si el proyecto no necesita generar distribuciones. | https://build.pypa.io/ |
 
 ---
 
 ## Política de Dependencias
 
-Antes de agregar una nueva dependencia al proyecto se deben cumplir estrictamente los siguientes criterios:
+Antes de agregar una nueva dependencia al proyecto, se deben cumplir los siguientes criterios:
 
-1. Verificar que no exista una solución ya disponible en la biblioteca estándar de Python.
-2. Revisar el mantenimiento y soporte del proyecto.
-3. Evaluar riesgos de seguridad.
-4. Justificar claramente su uso.
-5. Documentar propósito y versión.
-6. Mantener actualizadas las dependencias
+1. Verificar que la funcionalidad no pueda resolverse con la biblioteca estándar de Python.
+2. Evaluar el mantenimiento, soporte y comunidad de la dependencia.
+3. Revisar riesgos de seguridad y compatibilidad de licencias.
+4. Justificar claramente su necesidad y valor para el proyecto.
+5. Documentar su propósito, versión y uso.
+6. Mantener las dependencias actualizadas.
+7. Eliminar dependencias que ya no se utilicen.
