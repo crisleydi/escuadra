@@ -76,3 +76,5 @@ Ver [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Licencia
 MIT — ver [LICENSE](LICENSE)
+
+Actualizado por crisleydi.
