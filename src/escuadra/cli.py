@@ -66,45 +66,50 @@ def ejecutar_herramienta(args):
 def main():
     """Punto de entrada principal del CLI de Escuadra."""
     
-    verificar_entorno()
+    try:
+        verificar_entorno()
 
-    parser = argparse.ArgumentParser(
-        prog="escuadra",
-        description="Herramientas de cálculo de ingeniería civil y eléctrica."
-    )
+        parser = argparse.ArgumentParser(
+            prog="escuadra",
+            description="Herramientas de cálculo de ingeniería civil y eléctrica."
+        )
 
-    parser.add_argument(
-        "--version", "-v",
-        action="version",
-        version=f"%(prog)s {__version__}"
-    )
+        parser.add_argument(
+            "--version", "-v",
+            action="version",
+            version=f"%(prog)s {__version__}"
+        )
 
-    subparsers = parser.add_subparsers(
-        title="herramientas",
-        dest="herramienta",
-        help="Herramienta a ejecutar"
-    )
+        subparsers = parser.add_subparsers(
+            title="herramientas",
+            dest="herramienta",
+            help="Herramienta a ejecutar"
+        )
 
-    # Subcomando: viga
-    viga_parser = subparsers.add_parser("viga", help="Cálculo de reacciones en vigas")
-    viga_parser.add_argument("--longitud", type=float, required=True, help="Longitud de la viga en metros")
-    viga_parser.add_argument("--carga", type=float, required=True, help="Carga puntual en kN")
+        # Subcomando: viga
+        viga_parser = subparsers.add_parser("viga", help="Cálculo de reacciones en vigas")
+        viga_parser.add_argument("--longitud", type=float, required=True, help="Longitud de la viga en metros")
+        viga_parser.add_argument("--carga", type=float, required=True, help="Carga puntual en kN")
 
-    # Subcomando: tension
-    tension_parser = subparsers.add_parser("tension", help="Cálculo de caída de tensión")
-    tension_parser.add_argument("--longitud", type=float, required=True, help="Longitud del conductor en metros")
-    tension_parser.add_argument("--corriente", type=float, required=True, help="Corriente en amperios")
-    tension_parser.add_argument("--seccion", type=float, required=True, help="Sección del conductor en mm²")
+        # Subcomando: tension
+        tension_parser = subparsers.add_parser("tension", help="Cálculo de caída de tensión")
+        tension_parser.add_argument("--longitud", type=float, required=True, help="Longitud del conductor en metros")
+        tension_parser.add_argument("--corriente", type=float, required=True, help="Corriente en amperios")
+        tension_parser.add_argument("--seccion", type=float, required=True, help="Sección del conductor en mm²")
 
-    args = parser.parse_args()
+        args = parser.parse_args()
 
-    if args.herramienta is None:
-        parser.print_help()
-        sys.exit(0)
+        if args.herramienta is None:
+            parser.print_help()
+            sys.exit(0)
 
-    ejecutar_herramienta(args)
+        ejecutar_herramienta(args)
+
+    except KeyboardInterrupt:
+        print("\nOperación cancelada por el usuario.")
+        sys.exit(130)
 
 
 if __name__ == "__main__":
     main()
-
+    
