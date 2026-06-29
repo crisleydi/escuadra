@@ -293,3 +293,7 @@ Esto ayuda a evitar conflictos al momento de abrir el Pull Request.
 
 El Forking Workflow permite colaborar de manera ordenada en Escuadra.  
 Cada integrante trabaja desde su propio fork, crea una rama para cada tarea, realiza sus cambios, los sube a GitHub y finalmente abre un Pull Request para que el equipo pueda revisarlos antes de integrarlos al proyecto principal.
+
+## Prueba de contribución
+
+Documento revisado por Crisleydi López.
