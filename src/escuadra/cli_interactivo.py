@@ -2,47 +2,77 @@
 Modo interactivo (REPL) para Escuadra CLI
 """
 
-from escuadra.modulos.sistemas.herramienta_calculadora_subred import herramienta_calculadora_subred
-from escuadra.modulos.civil.herramienta_diseno_vial import herramienta_diseno_vial
-
-
-def listar_herramientas():
-    return [
-        "Calculadora de Subred (IP/CIDR)",
-        "Diseño Vial (Pendiente + Peralte)"
-    ]
+from escuadra.registry import obtener_herramientas
 
 
 def ejecutar_interactivo():
-    print("\n=== ESCUADRA MODO INTERACTIVO ===\n")
+    while True:
+        print("\n=== ESCUADRA MODO INTERACTIVO ===\n")
 
-    herramientas = listar_herramientas()
+        # 1. Obtener herramientas desde el registry (OBLIGATORIO)
+        herramientas = obtener_herramientas()
 
-    for i, h in enumerate(herramientas, start=1):
-        print(f"{i}. {h}")
+        if not herramientas:
+            print("No hay herramientas registradas.")
+            return
 
-    opcion = int(input("\nSelecciona una herramienta: "))
+        # 2. Mostrar lista dinámica
+        for i, h in enumerate(herramientas, start=1):
+            print(f"{i}. {h['nombre']}")
 
-    if opcion == 1:
-        print("\n--- Calculadora de Subred ---")
-        ip = input("IP: ")
-        cidr = input("CIDR: ")
+        print("0. Salir")
 
-        resultado = herramienta_calculadora_subred(ip, cidr)
-        print("\nRESULTADO:\n")
+        # 3. Selección con validación
+        try:
+            opcion = int(input("\nSelecciona una herramienta: "))
+        except ValueError:
+            print("❌ Debes ingresar un número")
+            continue
+
+        if opcion == 0:
+            print("Saliendo...")
+            break
+
+        if opcion < 1 or opcion > len(herramientas):
+            print("❌ Opción inválida")
+            continue
+
+        herramienta = herramientas[opcion - 1]
+
+        # 4. Pedir parámetros dinámicamente
+        parametros = {}
+
+        print(f"\n--- {herramienta['nombre']} ---\n")
+
+        for param in herramienta["parametros"]:
+            while True:
+                valor = input(f"Ingrese {param['nombre']}: ")
+
+                # 5. VALIDACIÓN DE TIPOS
+                if param["tipo"] == "int":
+                    if not valor.isdigit():
+                        print("❌ Debe ser entero")
+                        continue
+                    valor = int(valor)
+
+                elif param["tipo"] == "float":
+                    try:
+                        valor = float(valor)
+                    except ValueError:
+                        print("❌ Debe ser decimal")
+                        continue
+
+                elif param["tipo"] == "str":
+                    if not valor.strip():
+                        print("❌ No puede estar vacío")
+                        continue
+
+                parametros[param["nombre"]] = valor
+                break
+
+        # 6. Ejecutar función real
+        resultado = herramienta["funcion"](**parametros)
+
+        # 7. Mostrar resultado
+        print("\n=== RESULTADO ===\n")
         print(resultado)
-
-    elif opcion == 2:
-        print("\n--- Diseño Vial ---")
-        ei = float(input("Elevación inicial: "))
-        ef = float(input("Elevación final: "))
-        dh = float(input("Distancia horizontal: "))
-        v = float(input("Velocidad de diseño (km/h): "))
-        r = float(input("Radio de curva: "))
-
-        resultado = herramienta_diseno_vial(ei, ef, dh, v, r)
-        print("\nRESULTADO:\n")
-        print(resultado)
-
-    else:
-        print("Opción inválida")
